@@ -1,0 +1,85 @@
+# ------------------------------
+# Python cache files
+# ------------------------------
+pycache/
+*.py[cod]
+*$py.class
+
+# ------------------------------
+# Virtual environments
+# ------------------------------
+venv/
+.venv/
+env/
+ENV/
+backend/venv/
+
+# ------------------------------
+# Flask instance and databases
+# ------------------------------
+instance/
+backend/instance/
+*.db
+*.sqlite
+*.sqlite3
+
+# ------------------------------
+# Environment variables and secrets
+# ------------------------------
+.env
+.env.*
+!.env.example
+
+# ------------------------------
+# Pytest and coverage files
+# ------------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+pytest_results.log
+test_results.txt
+test_resulte.txt
+
+# ------------------------------
+# VS Code and IDE files
+# ------------------------------
+.vscode/
+.idea/
+*.code-workspace
+
+# ------------------------------
+# Operating system files
+# ------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ------------------------------
+# Logs and temporary files
+# ------------------------------
+*.log
+*.tmp
+*.temp
+*.bak
+
+# ------------------------------
+# Build and package files
+# ------------------------------
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ------------------------------
+# Python type-checking caches
+# ------------------------------
+.mypy_cache/
+.pyright/
+.pytype/
+
+# ------------------------------
+# Flask temporary files
+# ------------------------------
+flask_session/

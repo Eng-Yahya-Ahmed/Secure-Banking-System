@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit Profile
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-md-8 col-lg-6">
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-header bg-dark text-white">
+
+                <h4 class="mb-0">
+                    Edit Profile
+                </h4>
+
+            </div>
+
+            <div class="card-body p-4">
+
+                <p class="text-muted">
+                    Enter your current password to confirm
+                    the profile changes.
+                </p>
+
+                <form method="POST">
+
+                    <input
+                        type="hidden"
+                        name="csrf_token"
+                        value="{{ csrf_token() }}"
+                    >
+
+                    <div class="mb-3">
+
+                        <label
+                            for="username"
+                            class="form-label"
+                        >
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="username"
+                            name="username"
+                            value="{{ current_user.username }}"
+                            minlength="3"
+                            maxlength="30"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label
+                            for="email"
+                            class="form-label"
+                        >
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            value="{{ current_user.email }}"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label
+                            for="current_password"
+                            class="form-label"
+                        >
+                            Current Password
+                        </label>
+
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="current_password"
+                            name="current_password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="d-grid gap-2">
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            Save Changes
+                        </button>
+
+                        <a
+                            href="{{ url_for('dashboard.profile') }}"
+                            class="btn btn-outline-secondary"
+                        >
+                            Cancel
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

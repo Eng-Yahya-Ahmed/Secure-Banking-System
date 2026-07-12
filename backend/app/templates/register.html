@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block title %}
+Create Account
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-md-8 col-lg-6">
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-body p-4 p-md-5">
+
+                <h1 class="text-center mb-4">
+                    Create Account
+                </h1>
+
+                <form method="POST">
+
+                    <input
+                        type="hidden"
+                        name="csrf_token"
+                        value="{{ csrf_token() }}"
+                    >
+
+                    <!-- Username -->
+                    <div class="mb-3">
+
+                        <label
+                            for="username"
+                            class="form-label"
+                        >
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="username"
+                            name="username"
+                            placeholder="Enter username"
+                            minlength="3"
+                            maxlength="30"
+                            required
+                        >
+
+                        <div class="form-text">
+                            Use 3–30 letters, numbers, or underscores.
+                        </div>
+
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+
+                        <label
+                            for="email"
+                            class="form-label"
+                        >
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-3">
+
+                        <label
+                            for="password"
+                            class="form-label"
+                        >
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="password"
+                            name="password"
+                            placeholder="Create a strong password"
+                            minlength="8"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <div class="form-text">
+                            Use uppercase, lowercase, number and special character.
+                        </div>
+
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="mb-4">
+
+                        <label
+                            for="confirm_password"
+                            class="form-label"
+                        >
+                            Confirm Password
+                        </label>
+
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="confirm_password"
+                            name="confirm_password"
+                            placeholder="Enter the password again"
+                            minlength="8"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="d-grid">
+                        <button
+                            type="submit"
+                            class="btn btn-success"
+                        >
+                            Register
+                        </button>
+
+                    </div>
+
+                </form>
+
+                <p class="text-center mt-4 mb-0">
+
+                    Already have an account?
+
+                    <a href="{{ url_for('auth.login') }}">
+                        Login
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

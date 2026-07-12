@@ -1,0 +1,19 @@
+services:
+  banking-app:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+
+    container_name: secure-banking-system
+
+    ports:
+      - "5000:5000"
+
+    volumes:
+      - ../backend/instance:/app/instance
+
+    environment:
+      FLASK_DEBUG: "0"
+      PYTHONUNBUFFERED: "1"
+
+    restart: unless-stopped

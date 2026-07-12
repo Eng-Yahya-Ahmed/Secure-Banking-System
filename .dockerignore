@@ -1,0 +1,47 @@
+# البيئة الافتراضية
+venv/
+backend/venv/
+.venv/
+
+# ملفات Python المؤقتة
+pycache/
+*.py[cod]
+*$py.class
+
+# قواعد البيانات والبيانات المحلية
+backend/instance/
+*.db
+*.sqlite
+*.sqlite3
+
+# ملفات البيئة والأسرار
+.env
+.env.*
+*.env
+
+# Git
+.git/
+.github/
+.gitignore
+
+# اختبارات ونتائجها
+.pytest_cache/
+.coverage
+htmlcov/
+pytest_results.log
+test_results.log
+
+# إعدادات المحرر
+.vscode/
+.idea/
+
+# ملفات النظام
+.DS_Store
+Thumbs.db
+
+# ملفات السجلات
+*.log
+
+# ملفات مؤقتة
+*.tmp
+*.temp

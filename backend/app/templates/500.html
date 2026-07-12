@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}
+Server Error
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center mt-5">
+
+    <div class="col-md-7 col-lg-6">
+
+        <div class="card shadow-sm border-0 text-center">
+
+            <div class="card-body p-5">
+
+                <h1 class="display-1 fw-bold text-danger">
+                    500
+                </h1>
+
+                <h2 class="mb-3">
+                    Internal Server Error
+                </h2>
+
+                <p class="text-muted mb-4">
+                    An unexpected error occurred.
+                    Please try again later.
+                </p>
+
+                {% if current_user.is_authenticated %}
+
+                    {% if current_user.role == "admin" %}
+
+                        <a
+                            href="{{ url_for('admin.admin_dashboard') }}"
+                            class="btn btn-dark"
+                        >
+                            Return to Admin Panel
+                        </a>
+
+                    {% else %}
+
+                        <a
+                            href="{{ url_for('dashboard.dashboard') }}"
+                            class="btn btn-primary"
+                        >
+                            Return to Dashboard
+                        </a>
+
+                    {% endif %}
+
+                {% else %}
+
+                    <a
+                        href="{{ url_for('auth.login') }}"
+                        class="btn btn-primary"
+                    >
+                        Go to Login
+                    </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

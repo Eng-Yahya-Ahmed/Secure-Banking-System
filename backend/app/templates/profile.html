@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block title %}
+My Profile
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-8">
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">
+                    My Profile
+                </h4>
+            </div>
+
+            <div class="card-body p-4">
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="text-muted">
+                            Username
+                        </label>
+
+                        <div class="form-control bg-light">
+                            {{ current_user.username }}
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="text-muted">
+                            Email Address
+                        </label>
+
+                        <div class="form-control bg-light">
+                            {{ current_user.email }}
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="text-muted">
+                            Account Role
+                        </label>
+
+                        <div class="form-control bg-light">
+                            {{ current_user.role|capitalize }}
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="text-muted">
+                            Account Status
+                        </label>
+
+                        <div class="form-control bg-light">
+
+                            {% if current_user.is_active %}
+                                <span class="text-success fw-bold">
+                                    Active
+                                </span>
+                            {% else %}
+                                <span class="text-danger fw-bold">
+                                    Disabled
+                                </span>
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <h5 class="mb-3">
+                    Bank Account Information
+                </h5>
+
+                {% if account %}
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="text-muted">
+                                Account Number
+                            </label>
+
+                            <div class="form-control bg-light">
+                                {{ account.account_number }}
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="text-muted">
+                                Current Balance
+                            </label>
+
+                            <div class="form-control bg-light
+                                        text-success fw-bold">
+                                ${{ "%.2f"|format(account.balance) }}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                {% else %}
+
+                    <div class="alert alert-warning">
+                        No bank account is associated with this user.
+                    </div>
+
+                {% endif %}
+
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                    <a
+                        href="{{ url_for('dashboard.edit_profile') }}"
+                        class="btn btn-success"
+                    >
+                         Edit Profile
+                    </a>
+
+                    <a
+                        href="{{ url_for('auth.change_password') }}"
+                        class="btn btn-primary"
+                    >
+                        Change Password
+                    </a>
+
+                    {% if current_user.role == "admin" %}
+                    <a
+                            href="{{ url_for(
+                                'admin.admin_dashboard'
+                            ) }}"
+                            class="btn btn-outline-secondary"
+                        >
+                            Back to Admin Panel
+                        </a>
+
+                    {% else %}
+
+                        <a
+                            href="{{ url_for(
+                                'dashboard.dashboard'
+                            ) }}"
+                            class="btn btn-outline-secondary"
+                        >
+                            Back to Dashboard
+                        </a>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
