@@ -104,75 +104,102 @@ The project includes several security controls:
 
 ## Project Structure
 
-`text
-secure_Banking_System_pro/
+Secure-Banking-System/
+│
+├── .github/
+│   └── workflows/
+│       └── tests.yml
 │
 ├── backend/
 │   ├── app/
 │   │   ├── models/
-│   │   │   ├── user.py
+│   │   │   ├── __init__.py
 │   │   │   ├── account.py
-│   │   │   └── transactions.py
+│   │   │   ├── transactions.py
+│   │   │   └── user.py
 │   │   │
 │   │   ├── routes/
-│   │   │   ├── home.py
+│   │   │   ├── __init__.py
+│   │   │   ├── admin.py
 │   │   │   ├── auth.py
 │   │   │   ├── dashboard.py
-│   │   │   ├── transfer.py
+│   │   │   ├── home.py
 │   │   │   ├── transactions.py
-│   │   │   └── admin.py
+│   │   │   └── transfer.py
 │   │   │
 │   │   ├── security/
+│   │   │   ├── __init__.py
+│   │   │   ├── csrf.py
 │   │   │   ├── hashing.py
 │   │   │   └── validation.py
 │   │   │
-│   │   ├── services/
 │   │   ├── static/
-│   │   │   └── css/
-│   │   │       └── style.css
+│   │   │   ├── css/
+│   │   │   │   └── style.css
+│   │   │   └── js/
+│   │   │       └── main.js
 │   │   │
 │   │   ├── templates/
-│   │   │   ├── base.html
-│   │   │   ├── home.html
-│   │   │   ├── login.html
-│   │   │   ├── register.html
-│   │   │   ├── dashboard.html
-│   │   │   ├── transfer.html
-│   │   │   ├── transactions.html
-│   │   │   ├── admin.html
-│   │   │   ├── profile.html
-│   │   │   ├── edit_profile.html
-│   │   │   ├── change_password.html
 │   │   │   ├── 403.html
 │   │   │   ├── 404.html
 │   │   │   ├── 429.html
-│   │   │   └── 500.html
+│   │   │   ├── 500.html
+│   │   │   ├── admin.html
+│   │   │   ├── base.html
+│   │   │   ├── change_password.html
+│   │   │   ├── dashboard.html
+│   │   │   ├── edit_profile.html
+│   │   │   ├── home.html
+│   │   │   ├── login.html
+│   │   │   ├── profile.html
+│   │   │   ├── register.html
+│   │   │   ├── transactions.html
+│   │   │   └── transfer.html
 │   │   │
-│   │   ├── extensions.py
-│   │   └── init.py
+│   │   ├── __init__.py
+│   │   └── extensions.py
 │   │
-│   ├── instance/
 │   ├── config.py
+│   ├── pytest.ini
 │   ├── requirements.txt
 │   └── run.py
 │
+├── database/
+│   ├── README.md
+│   └── schema.sql
+│
+├── docker/
+│   ├── Dockerfile
+│   ├── docker-compose.yml
+│   └── README.md
+│
+├── docs/
+│   ├── diagrams/
+│   │   └── system_architecture.md
+│   ├── screenshots/
+│   │   └── README.md
+│   ├── README.md
+│   ├── database_design.md
+│   ├── project_report.md
+│   ├── security_features.md
+│   ├── testing_report.md
+│   └── user_guide.md
+│
+├── frontend/
+│   └── README.md
+│
 ├── tests/
-│   ├── init.py
+│   ├── __init__.py
 │   ├── conftest.py
-│   ├── test_pages.py
 │   ├── test_auth.py
+│   ├── test_pages.py
 │   └── test_transfer.py
 │
-├── database/
-├── docker/
-├── docs/
-├── frontend/
-├── .github/
+├── .dockerignore
 ├── .gitignore
 ├── LICENSE
+├── pyrightconfig.json
 └── README.md
-
----
 
 ## Database Models
 
@@ -539,3 +566,21 @@ Developed as a Secure Software Development course project.
 ## License
 
 This project is created for educational purposes.
+
+
+---
+
+## GitHub Repository
+
+The complete source code, documentation, automated tests, and Docker configuration are available in the official GitHub repository:
+
+[Open Secure Banking System on GitHub](https://github.com/Eng-Yahya-Ahmed/Secure-Banking-System)
+
+---
+
+## Project Information
+
+Developed by: المهندس يحيئ أحمد عبده مقبل  
+Supervised by: المهندس نشوان  
+Academic Year: 2026  
+Project Type: Secure Software Development Project.
