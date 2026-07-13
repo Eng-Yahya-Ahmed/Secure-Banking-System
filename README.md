@@ -101,105 +101,27 @@ The project includes several security controls:
 - GitHub
 
 ---
-
 ## Project Structure
 
-Secure-Banking-System/
-│
-├── .github/
-│   └── workflows/
-│       └── tests.yml
-│
-├── backend/
-│   ├── app/
-│   │   ├── models/
-│   │   │   ├── __init__.py
-│   │   │   ├── account.py
-│   │   │   ├── transactions.py
-│   │   │   └── user.py
-│   │   │
-│   │   ├── routes/
-│   │   │   ├── __init__.py
-│   │   │   ├── admin.py
-│   │   │   ├── auth.py
-│   │   │   ├── dashboard.py
-│   │   │   ├── home.py
-│   │   │   ├── transactions.py
-│   │   │   └── transfer.py
-│   │   │
-│   │   ├── security/
-│   │   │   ├── __init__.py
-│   │   │   ├── csrf.py
-│   │   │   ├── hashing.py
-│   │   │   └── validation.py
-│   │   │
-│   │   ├── static/
-│   │   │   ├── css/
-│   │   │   │   └── style.css
-│   │   │   └── js/
-│   │   │       └── main.js
-│   │   │
-│   │   ├── templates/
-│   │   │   ├── 403.html
-│   │   │   ├── 404.html
-│   │   │   ├── 429.html
-│   │   │   ├── 500.html
-│   │   │   ├── admin.html
-│   │   │   ├── base.html
-│   │   │   ├── change_password.html
-│   │   │   ├── dashboard.html
-│   │   │   ├── edit_profile.html
-│   │   │   ├── home.html
-│   │   │   ├── login.html
-│   │   │   ├── profile.html
-│   │   │   ├── register.html
-│   │   │   ├── transactions.html
-│   │   │   └── transfer.html
-│   │   │
-│   │   ├── __init__.py
-│   │   └── extensions.py
-│   │
-│   ├── config.py
-│   ├── pytest.ini
-│   ├── requirements.txt
-│   └── run.py
-│
-├── database/
-│   ├── README.md
-│   └── schema.sql
-│
-├── docker/
-│   ├── Dockerfile
-│   ├── docker-compose.yml
-│   └── README.md
-│
-├── docs/
-│   ├── diagrams/
-│   │   └── system_architecture.md
-│   ├── screenshots/
-│   │   └── README.md
-│   ├── README.md
-│   ├── database_design.md
-│   ├── project_report.md
-│   ├── security_features.md
-│   ├── testing_report.md
-│   └── user_guide.md
-│
-├── frontend/
-│   └── README.md
-│
-├── tests/
-│   ├── __init__.py
-│   ├── conftest.py
-│   ├── test_auth.py
-│   ├── test_pages.py
-│   └── test_transfer.py
-│
-├── .dockerignore
-├── .gitignore
-├── LICENSE
-├── pyrightconfig.json
-└── README.md
+| Directory / File | Description |
+|---|---|
+| backend/ | Contains the Flask backend application |
+| backend/app/ | Main application package |
+| backend/app/models/ | Database models: User, Account, and Transaction |
+| backend/app/routes/ | Authentication, dashboard, transfer, transaction, and admin routes |
+| backend/app/security/ | Validation, password hashing, CSRF, and security headers |
+| backend/app/templates/ | HTML templates used by the application |
+| backend/app/static/ | CSS, JavaScript, and static resources |
+| backend/config.py | Application and security configuration |
+| backend/run.py | Application entry point |
+| database/ | Database schema and database documentation |
+| docker/ | Dockerfile and Docker Compose configuration |
+| tests/ | Automated tests using Pytest |
+| docs/ | Project, S-SDLC, security, and testing documentation |
+| docs/security_reports/ | Bandit and OWASP ZAP security reports |
+| .github/workflows/ | GitHub Actions continuous integration workflow |
+| README.md | Main project documentation |
+| LICENSE | Project license |
 
 ## Database Models
 
