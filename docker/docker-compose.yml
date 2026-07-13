@@ -7,7 +7,7 @@ services:
     container_name: secure-banking-system
 
     ports:
-      - "5000:5000"
+      - "127.0.0.1:5000:5000"
 
     volumes:
       - ../backend/instance:/app/instance

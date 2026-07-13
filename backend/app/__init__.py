@@ -64,6 +64,7 @@ def create_app(test_config=None):
     from app.routes.transfer import transfer_bp
     from app.routes.transactions import transactions_bp
     from app.routes.admin import admin_bp
+    from app.security.headers import register_security_headers
 
     # تسجيل الـ Blueprints
     app.register_blueprint(home_bp)
@@ -72,6 +73,7 @@ def create_app(test_config=None):
     app.register_blueprint(transfer_bp)
     app.register_blueprint(transactions_bp)
     app.register_blueprint(admin_bp)
+    
 
     @app.errorhandler(403)
     def forbidden_error(error):
@@ -102,4 +104,5 @@ def create_app(test_config=None):
     with app.app_context():
         db.create_all()
 
+    register_security_headers(app)
     return app

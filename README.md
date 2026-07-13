@@ -557,6 +557,47 @@ Possible future improvements include:
 
 ---
 
+
+## Security Testing
+
+Static and dynamic security testing were performed as part of the Secure Software Development Life Cycle (S-SDLC).
+
+### Test Results
+
+| Test | Tool | Result |
+|---|---|---|
+| SAST | Bandit | No security issues detected |
+| DAST | OWASP ZAP | 0 High, 0 Medium, 0 Low |
+| Automated Testing | Pytest | 25 tests passed |
+| Containerization | Docker | Application running successfully |
+| Continuous Integration | GitHub Actions | Successful |
+
+### Security Reports
+
+- [S-SDLC Report](docs/ssdlc_report.md)
+- [Security Testing Summary](docs/security_reports/README.md)
+- [Bandit SAST Report](docs/security_reports/bandit_report.html)
+- [OWASP ZAP HTML Report](docs/security_reports/zap_report.html)
+- [OWASP ZAP Markdown Report](docs/security_reports/zap_report.md)
+- [OWASP ZAP JSON Report](docs/security_reports/zap_report.json)
+
+### Final Security Result
+
+The final OWASP ZAP baseline scan detected:
+
+- 0 High-risk alerts
+- 0 Medium-risk alerts
+- 0 Low-risk alerts
+- 6 Informational alerts
+- 0 False positives
+- 62 passed security checks
+
+Bandit did not detect any security issues in the scanned Python source code.
+
+The remaining informational alerts describe normal application behavior and do not represent confirmed security vulnerabilities.
+
+The OWASP ZAP scan was performed as a preliminary unauthenticated baseline scan against the publicly accessible application pages.
+
 ## Author
 
 Developed as a Secure Software Development course project.
