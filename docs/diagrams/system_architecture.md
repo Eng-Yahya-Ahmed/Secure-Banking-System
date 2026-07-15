@@ -6,8 +6,8 @@
 
 تم إنشاء المخططات باستخدام لغة:
 
-Mermaid
-ويمكن عرضها من خلال إضافة:
+يمكن عرض مخططات Mermaid مباشرة على GitHub عند وضعها داخل كتل `mermaid`،
+كما يمكن معاينتها داخل VS Code باستخدام إضافة تدعم Mermaid.
 
 Markdown Preview Enhanced
 ---
@@ -16,6 +16,7 @@ Markdown Preview Enhanced
 
 يوضح المخطط التالي المكونات الأساسية للنظام المصرفي الآمن:
 
+```mermaid
 flowchart TD
 
     A[المستخدم] --> B[متصفح الويب]
@@ -47,12 +48,15 @@ flowchart TD
 
     G --> T[HTML Pages]
     T --> B
+```
+
 ---
 
 ## 3. طبقات النظام
 
 يعتمد النظام على عدة طبقات منفصلة:
 
+```mermaid
 flowchart TB
 
     A[Presentation Layer]
@@ -72,6 +76,8 @@ flowchart TB
     C --> D
     D --> E
     E --> F
+```
+
 ### طبقة العرض
 
 تتكون من:
@@ -116,6 +122,7 @@ flowchart TB
 
 يوضح المخطط كيف ينتقل طلب المستخدم داخل التطبيق:
 
+```mermaid
 sequenceDiagram
 
     actor User as المستخدم
@@ -153,10 +160,13 @@ sequenceDiagram
         Browser-->>User: إظهار سبب الرفض
 
     end
+```
+
 ---
 
 ## 5. مخطط تسجيل مستخدم جديد
 
+```mermaid
 flowchart TD
 
     A[فتح صفحة التسجيل] --> B[إدخال البيانات]
@@ -200,10 +210,13 @@ flowchart TD
     N --> O[حفظ البيانات]
 
     O --> P[الانتقال إلى تسجيل الدخول]
+```
+
 ---
 
 ## 6. مخطط تسجيل الدخول
 
+```mermaid
 flowchart TD
 
     A[فتح صفحة تسجيل الدخول] --> B[إدخال اسم المستخدم وكلمة المرور]
@@ -227,11 +240,13 @@ flowchart TD
     I -- Admin --> J[الانتقال إلى لوحة المدير]
 
     I -- Customer --> K[الانتقال إلى لوحة المستخدم]
+```
+
 ---
 
 ## 7. مخطط تنفيذ التحويل المالي
 
-`mermaid
+```mermaid
 flowchart TD
 
     A[فتح صفحة التحويل] --> B[إدخال رقم المستلم والمبلغ]
@@ -271,11 +286,13 @@ flowchart TD
 
     O --> P[عرض رسالة خطأ]
 
+```
+
 ---
 
 ## 8. التسلسل التفصيلي للتحويل المالي
 
-mermaid
+```mermaid
 sequenceDiagram
 
     actor Sender as المرسل
@@ -328,11 +345,13 @@ sequenceDiagram
 
     Browser-->>Sender: عرض الرصيد الجديد
 
+```
+
 ---
 
 ## 9. مخطط قاعدة البيانات
 
-mermaid
+```mermaid
 erDiagram
 
     USERS -- ACCOUNTS : owns
@@ -366,11 +385,13 @@ erDiagram
         datetime created_at
     }
 
+```
+
 ---
 
 ## 10. مخطط المصادقة والصلاحيات
 
-mermaid
+```mermaid
 flowchart TD
 
     A[طلب فتح صفحة] --> B{هل الصفحة عامة؟}
@@ -391,11 +412,13 @@ flowchart TD
 
     G -- لا --> H[عرض خطأ 403]
 
+```
+
 ---
 
 ## 11. صلاحيات المستخدمين
 
-mermaid
+```mermaid
 flowchart LR
 
     A[Customer]
@@ -416,11 +439,13 @@ flowchart LR
     B --> M[Enable User]
     B --> N[Delete User]
 
+```
+
 ---
 
 ## 12. مخطط تشفير كلمة المرور
 
-mermaid
+```mermaid
 flowchart TD
 
     A[كلمة المرور الأصلية] --> B[Flask-Bcrypt]
@@ -443,11 +468,13 @@ flowchart TD
 
     I -- لا --> K[رفض تسجيل الدخول]
 
+```
+
 ---
 
 ## 13. مخطط حماية النماذج باستخدام CSRF
 
-mermaid
+```mermaid
 sequenceDiagram
 
     actor User as المستخدم
@@ -487,11 +514,13 @@ sequenceDiagram
 
     end
 
+```
+
 ---
 
 ## 14. مخطط تحديد عدد المحاولات
 
-mermaid
+```mermaid
 flowchart TD
 
     A[استقبال الطلب] --> B[Flask-Limiter]
@@ -506,11 +535,13 @@ flowchart TD
 
     F --> G[الانتظار حتى انتهاء مدة التقييد]
 
+```
+
 ---
 
 ## 15. مخطط معالجة الأخطاء
 
-mermaid
+```mermaid
 flowchart TD
 
     A[تنفيذ الطلب] --> B{هل حدث خطأ؟}
@@ -537,11 +568,13 @@ flowchart TD
 
     I --> J
 
+```
+
 ---
 
 ## 16. مخطط الاختبارات الآلية
 
-mermaid
+```mermaid
 flowchart TD
 
     A[تشغيل Pytest] --> B[إنشاء تطبيق اختبار]
@@ -570,11 +603,13 @@ flowchart TD
 
     J --> K
 
+```
+
 ---
 
 ## 17. دورة حياة المستخدم
 
-mermaid
+```mermaid
 stateDiagram-v2
 
     [*] --> Registered
@@ -607,76 +642,281 @@ stateDiagram-v2
 
     LoggedOut --> [*]
 
+```
+
 ---
 
 ## 18. مخطط ملفات المشروع
 
-mermaid
+```mermaid
 flowchart TD
+    ROOT[secure_Banking_System_pro]
 
-    A[secure_Banking_System_pro]
+    ROOT --> BACKEND[backend]
+    ROOT --> TESTS[tests]
+    ROOT --> DOCS[docs]
+    ROOT --> DATABASE[database]
+    ROOT --> DOCKER[docker]
+    ROOT --> FRONTEND[frontend]
+    ROOT --> GITHUB[.github]
 
-    A --> B[backend]
+    BACKEND --> APP[app]
+    BACKEND --> INSTANCE[instance]
+    BACKEND --> CONFIG[config.py]
+    BACKEND --> REQ[requirements.txt]
+    BACKEND --> RUN[run.py]
 
-    A --> C[tests]
+    APP --> MODELS[models]
+    APP --> ROUTES[routes]
+    APP --> SECURITY[security]
+    APP --> TEMPLATES[templates]
+    APP --> STATIC[static]
+    APP --> EXT[extensions.py]
 
-    A --> D[docs]
+    SECURITY --> HEADERS[headers.py]
+    SECURITY --> HASHING[hashing.py]
+    SECURITY --> VALIDATION[validation.py]
+    SECURITY --> CSRF_FILE[csrf.py]
 
-    A --> E[database]
+    TESTS --> TEST_PAGES[test_pages.py]
+    TESTS --> TEST_AUTH[test_auth.py]
+    TESTS --> TEST_TRANSFER[test_transfer.py]
+    TESTS --> CONFTEST[conftest.py]
 
-    A --> F[docker]
+    DOCS --> PROJECT_REPORT[project_report.md]
+    DOCS --> DB_DESIGN[database_design.md]
+    DOCS --> SECURITY_FEATURES[security_features.md]
+    DOCS --> TESTING_REPORT[testing_report.md]
+    DOCS --> USER_GUIDE[user_guide.md]
+    DOCS --> SSDLC[ssdlc_report.md]
+    DOCS --> THREAT[threat_model.md]
+    DOCS --> DIAGRAMS[diagrams]
+    DOCS --> SECURITY_REPORTS[security_reports]
 
-    A --> G[frontend]
-
-    A --> H[.github]
-
-    B --> I[app]
-
-    B --> J[instance]
-
-    B --> K[config.py]
-
-    B --> L[requirements.txt]
-
-    B --> M[run.py]
-
-    I --> N[models]
-
-    I --> O[routes]
-
-    I --> P[security]
-
-    I --> Q[services]
-
-    I --> R[templates]
-
-    I --> S[static]
-
-    C --> T[test_pages.py]
-
-    C --> U[test_auth.py]
-
-    C --> V[test_transfer.py]
-
-    D --> W[project_report.md]
-
-    D --> X[database_design.md]
-
-    D --> Y[security_features.md]
-
-    D --> Z[testing_report.md]
-
-    D --> AA[user_guide.md]
-
-    D --> AB[diagrams]
-`
+    GITHUB --> WORKFLOWS[workflows]
+    WORKFLOWS --> TESTS_YML[tests.yml]
+```
 
 ---
 
-## 19. الخاتمة
+## 19. ملخص المخططات الوظيفية
 
 توضح هذه المخططات طريقة عمل النظام المصرفي الآمن من مرحلة استقبال طلب المستخدم حتى معالجة البيانات وحفظها في قاعدة البيانات.
 
 كما توضح آلية التسجيل، تسجيل الدخول، تنفيذ التحويل، التحكم في الصلاحيات، تشفير كلمات المرور، حماية CSRF، معالجة الأخطاء، وتنفيذ الاختبارات الآلية.
 
 تساعد هذه المخططات على فهم النظام بصورة أسرع، كما تسهل شرح المشروع أثناء العرض أو المناقشة.
+
+---
+
+## 20. مخطط المعمارية الأمنية
+
+يوضح المخطط التالي أماكن تطبيق الضوابط الأمنية بين المستخدم والتطبيق وقاعدة البيانات:
+
+```mermaid
+flowchart TD
+    USER[المستخدم] --> BROWSER[متصفح الويب]
+    BROWSER -->|HTTP Requests| PORT[Docker Port 127.0.0.1:5000]
+    PORT --> FLASK[Flask Application]
+
+    FLASK --> RATE[Rate Limiting]
+    FLASK --> CSRF[CSRF Protection]
+    FLASK --> AUTH[Authentication]
+    FLASK --> RBAC[Role-Based Access Control]
+    FLASK --> VALIDATION[Input Validation]
+    FLASK --> HEADERS[Security Headers]
+
+    VALIDATION --> LOGIC[Business Logic]
+    AUTH --> LOGIC
+    RBAC --> LOGIC
+
+    LOGIC --> ORM[SQLAlchemy ORM]
+    ORM --> DB[(SQLite Database)]
+
+    BROWSER -->|Bootstrap Resources| CDN[jsDelivr CDN]
+    CDN --> SRI[Subresource Integrity]
+```
+
+---
+
+## 21. طبقات الحماية الأمنية
+
+يستخدم المشروع مبدأ الدفاع متعدد الطبقات، بحيث لا يعتمد الأمان على إجراء واحد فقط:
+
+```mermaid
+flowchart LR
+    REQUEST[HTTP Request] --> LIMITER[Rate Limiting]
+    LIMITER --> CSRF_CHECK[CSRF Validation]
+    CSRF_CHECK --> LOGIN_CHECK[Authentication]
+    LOGIN_CHECK --> ROLE_CHECK[Authorization]
+    ROLE_CHECK --> INPUT_CHECK[Input Validation]
+    INPUT_CHECK --> BUSINESS[Business Logic]
+    BUSINESS --> ORM_LAYER[SQLAlchemy ORM]
+    ORM_LAYER --> DATABASE_LAYER[(Database)]
+
+    BUSINESS --> RESPONSE[HTTP Response]
+    RESPONSE --> SECURITY_HEADERS[Security Headers]
+    SECURITY_HEADERS --> CLIENT[User Browser]
+```
+
+### الضوابط المطبقة
+
+- تشفير كلمات المرور باستخدام Bcrypt.
+- حماية الجلسات باستخدام Flask-Login.
+- حماية النماذج باستخدام CSRF Token.
+- تحديد عدد الطلبات باستخدام Flask-Limiter.
+- التحقق من المدخلات داخل الخادم.
+- التحكم في الوصول بناءً على دور المستخدم.
+- استخدام SQLAlchemy ORM.
+- إضافة Content Security Policy.
+- إضافة X-Frame-Options وX-Content-Type-Options.
+- إضافة Referrer-Policy وPermissions-Policy.
+- حماية Cookies باستخدام HttpOnly وSameSite.
+- التحقق من ملفات Bootstrap الخارجية باستخدام Subresource Integrity.
+- استخدام Commit وRollback للمحافظة على اتساق التحويلات.
+
+---
+
+## 22. حدود الثقة
+
+تمثل حدود الثقة النقاط التي تنتقل عندها البيانات بين مناطق ذات مستويات ثقة مختلفة:
+
+```mermaid
+flowchart LR
+    subgraph UNTRUSTED[منطقة غير موثوقة]
+        USER_EXT[المستخدم]
+        BROWSER_EXT[المتصفح]
+    end
+
+    subgraph APP_ZONE[منطقة التطبيق]
+        CONTAINER[Docker Container]
+        FLASK_APP[Flask Application]
+        CONTROLS[Security Controls]
+    end
+
+    subgraph DATA_ZONE[منطقة البيانات]
+        SQLITE[(SQLite Database)]
+    end
+
+    USER_EXT --> BROWSER_EXT
+    BROWSER_EXT -->|Untrusted Input| CONTAINER
+    CONTAINER --> FLASK_APP
+    FLASK_APP --> CONTROLS
+    CONTROLS --> SQLITE
+```
+
+### الحدود الرئيسية
+
+1. **المستخدم والمتصفح:** جميع البيانات القادمة من المستخدم تعد غير موثوقة.
+2. **المتصفح وتطبيق Flask:** يجب التحقق من الطلب والمصادقة والصلاحيات وCSRF.
+3. **التطبيق وقاعدة البيانات:** لا يتم الوصول إلى البيانات إلا من خلال SQLAlchemy.
+4. **التطبيق والموارد الخارجية:** يتم التحقق من ملفات CDN باستخدام SRI.
+5. **الجهاز المضيف وحاوية Docker:** التطبيق معزول داخل الحاوية ومتاح محليًا فقط.
+
+---
+
+## 23. مخطط الاختبارات الأمنية
+
+```mermaid
+flowchart TD
+    SOURCE[Python Source Code] --> BANDIT[Bandit SAST]
+    RUNNING_APP[Running Flask Application] --> ZAP[OWASP ZAP DAST]
+    TEST_CODE[Automated Test Suite] --> PYTEST[Pytest]
+    REPOSITORY[GitHub Repository] --> ACTIONS[GitHub Actions]
+
+    BANDIT --> SECURITY_REPORTS[Security Reports]
+    ZAP --> SECURITY_REPORTS
+    PYTEST --> TEST_RESULTS[Test Results]
+    ACTIONS --> TEST_RESULTS
+```
+
+### النتائج النهائية
+
+| الاختبار | الأداة | النتيجة |
+|---|---|---|
+| الاختبارات البرمجية | Pytest | 25 اختبارًا ناجحًا |
+| SAST | Bandit | لا توجد مشكلات أمنية مصنفة |
+| DAST | OWASP ZAP | 0 High، 0 Medium، 0 Low |
+| التكامل المستمر | GitHub Actions | ناجح |
+
+تم تنفيذ فحص OWASP ZAP كفحص Baseline أولي غير مصادق عليه للصفحات العامة.
+
+---
+
+## 24. بنية التشغيل الحالية باستخدام Docker
+
+```mermaid
+flowchart TD
+    LOCAL_USER[المستخدم المحلي] --> LOCAL_BROWSER[المتصفح]
+    LOCAL_BROWSER -->|http://localhost:5000| HOST_PORT[127.0.0.1:5000]
+    HOST_PORT --> CONTAINER_APP[Docker Container]
+    CONTAINER_APP --> FLASK_SERVER[Flask Application]
+    FLASK_SERVER --> SQLALCHEMY[SQLAlchemy]
+    SQLALCHEMY --> LOCAL_DB[(SQLite Database)]
+```
+
+### خصائص التشغيل الحالي
+
+- التطبيق يعمل داخل Docker.
+- المنفذ مرتبط بالجهاز المحلي فقط.
+- قاعدة البيانات محفوظة خارج طبقات الحاوية المؤقتة.
+- المشروع مخصص للعرض الأكاديمي والتطوير المحلي.
+- لم يتم نشر التطبيق على خادم إنتاج عام.
+
+---
+
+## 25. البنية المقترحة لبيئة الإنتاج
+
+```mermaid
+flowchart TD
+    PROD_USER[المستخدم] --> HTTPS[HTTPS]
+    HTTPS --> NGINX[Nginx Reverse Proxy]
+    NGINX --> GUNICORN[Gunicorn WSGI Server]
+    GUNICORN --> PROD_FLASK[Flask Application]
+
+    PROD_FLASK --> POSTGRES[(PostgreSQL)]
+    PROD_FLASK --> AUDIT[Audit Logging]
+    PROD_FLASK --> MFA[MFA and Email Service]
+    PROD_FLASK --> SECRETS[Secret Management]
+
+    MONITORING[Security Monitoring] --> PROD_FLASK
+    BACKUPS[Automated Backups] --> POSTGRES
+```
+
+### التحسينات المقترحة للإنتاج
+
+- استخدام HTTPS.
+- استخدام Nginx وGunicorn.
+- الانتقال من SQLite إلى PostgreSQL.
+- إضافة المصادقة الثنائية.
+- إضافة سجل تدقيق أمني شامل.
+- استخدام نظام آمن لإدارة الأسرار.
+- إضافة مراقبة وتنبيهات أمنية.
+- إنشاء نسخ احتياطية تلقائية.
+- تنفيذ فحص ZAP مصادق عليه للصفحات الداخلية.
+
+---
+
+## 26. القيود الحالية
+
+- المشروع تطبيق Flask موحد وليس Microservices.
+- لا يوجد API Gateway.
+- التشغيل الحالي محلي عبر HTTP.
+- لا توجد مصادقة ثنائية.
+- لا يوجد تحقق من البريد الإلكتروني.
+- لا يوجد Audit Logging شامل.
+- قاعدة البيانات الحالية SQLite.
+- يتم استخدام Flask Development Server.
+- فحص OWASP ZAP الحالي غير مصادق عليه.
+- لا توجد مراقبة مركزية أو نسخ احتياطية تلقائية.
+- المشروع نموذج أكاديمي وليس نظامًا مصرفيًا إنتاجيًا حقيقيًا.
+
+---
+
+## 27. الخاتمة
+
+توضح المخططات البنية الوظيفية والأمنية لنظام Secure Banking System، بدءًا من استقبال طلب المستخدم، مرورًا بالمصادقة والتحقق من المدخلات وتنفيذ منطق التحويل، وصولًا إلى حفظ البيانات داخل قاعدة البيانات.
+
+كما توضح المخططات تطبيق مبدأ الدفاع متعدد الطبقات، وحدود الثقة، وتشغيل المشروع داخل Docker، وربط الاختبارات البرمجية والأمنية بدورة حياة تطوير البرمجيات الآمنة.
+
+تم الحفاظ على المخططات الوظيفية الأصلية وإضافة المعمارية الأمنية، والاختبارات الأمنية، وبنية التشغيل الحالية، والبنية المقترحة للإنتاج، والقيود الحالية، مما يجعل المستند أكثر اكتمالًا وملاءمة للعرض والمناقشة.

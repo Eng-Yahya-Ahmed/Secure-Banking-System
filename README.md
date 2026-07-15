@@ -479,6 +479,24 @@ Possible future improvements include:
 
 ---
 
+## Documentation
+
+The project includes detailed technical and security documentation:
+
+- [Project Report](docs/project_report.md)
+- [S-SDLC Report](docs/ssdlc_report.md)
+- [Database Design](docs/database_design.md)
+- [Security Features](docs/security_features.md)
+- [Testing Report](docs/testing_report.md)
+- [User Guide](docs/user_guide.md)
+- [Threat Model](docs/threat_model.md)
+- [System Security Architecture](docs/diagrams/system_architecture.md)
+- [Security Maintenance Plan](docs/security_maintenance_plan.md)
+- [Future Improvements](docs/future_improvements.md)
+- [Security Testing Reports](docs/security_reports/README.md)
+
+---
+
 
 ## Security Testing
 

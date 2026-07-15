@@ -31,7 +31,7 @@ def create_app(test_config=None):
     limiter.init_app(app)
 
     # إعدادات Flask-Login
-    login_manager.login_view = "auth.login"
+    login_manager.login_view = "auth.login" # type : ignore [assignment]
     login_manager.login_message = (
         "Please log in to access this page."
     )
